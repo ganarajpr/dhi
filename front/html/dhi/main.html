@@ -1,0 +1,14 @@
+<div class="main container">
+    <div class="row displaySection" ng-controller="DisplayController">
+         <div ng-repeat="command in data.processedCommands">
+             <kbd>{{command.input}}</kbd> : <code>{{command.output.outcome.intent}}</code>
+             <code>{{command.output.outcome.confidence}}</code>
+         </div>
+    </div>
+    <div class="row inputSection" ng-controller="InputController">
+        <form class="form" ng-submit="onKey()">
+            <input type="text" ng-model="data.userInput" class="form-control" />
+        </form>
+
+    </div>
+</div>
